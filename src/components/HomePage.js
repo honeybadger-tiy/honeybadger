@@ -13,13 +13,13 @@ class HomePage extends Component {
         <Grid.Row columns={1}>
           <img src="http://via.placeholder.com/750x250" />
         </Grid.Row>
-        <Grid.Row textAlign='left' columns={1}>
+        <Grid.Row className="featured" columns={1}>
           <Header as='h3'>Featured Badges</Header>
         </Grid.Row>
         <Grid.Row columns={4}>
           <Grid.Column>
             <img src="http://via.placeholder.com/250" />
-            <p className="featured">Featured Badge 1</p>
+            <p>Featured Badge 1</p>
           </Grid.Column>
           <Grid.Column>
             <img src="http://via.placeholder.com/250" />
@@ -30,8 +30,11 @@ class HomePage extends Component {
             <p>Featured Badge 3</p>
           </Grid.Column>
           <Grid.Column>
-            <img src="http://via.placeholder.com/250" />
-            <p>Find Us Here!</p>
+            <div className="contact">
+              <Header as='h4'>Location</Header>
+              <img src="http://via.placeholder.com/200" />
+              <p>Find Us Here!</p>
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

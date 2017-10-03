@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './components/App';
+import HomePage from './components/HomePage';
 import 'semantic-ui-css/semantic.min.css';
 import registerServiceWorker from './registerServiceWorker';
 import BaseLayout from './components/BaseLayout';
 
 ReactDOM.render(
   <BaseLayout>
-    <App />
+    <HomePage />
   </BaseLayout>
 
   , document.getElementById('root'));
