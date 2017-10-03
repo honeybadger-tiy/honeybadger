@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, Segment } from 'semantic-ui-react';
+import { Menu, Segment, Input, Button, Icon } from 'semantic-ui-react';
+import '../styles/style1.css';
+import logo from '../phone.png';
 
 export default class BaseLayout extends React.Component {
   state = {}
@@ -12,6 +14,9 @@ export default class BaseLayout extends React.Component {
     return (
       <div>
         <Menu>
+
+          <img className="backgroundColor" src={logo}/>
+
           <Menu.Item
             name='e&j'
             active={activeItem === 'e&j'}
@@ -35,6 +40,16 @@ export default class BaseLayout extends React.Component {
           >
             Contact Us
           </Menu.Item>
+          <Menu.Menu position='right'>
+          <Menu.Item >
+          <Button animated='vertical'>
+            <Button.Content hidden>Shop</Button.Content>
+            <Button.Content visible>
+            <Icon name='shop' />
+            </Button.Content>
+            </Button>
+            </Menu.Item>
+        </Menu.Menu>
         </Menu>
 
         {this.props.children}
