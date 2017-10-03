@@ -2,6 +2,15 @@ import React from 'react';
 import { Grid, Form, Button } from 'semantic-ui-react';
 
 export default class BadgesPage extends React.Component {
+  state = {
+    badges: []
+  }
+
+  componentDidMount() {
+    fetch("https://murmuring-scrubland-72784.herokuapp.com/badges/all")
+    .then(response => response.json())
+    .then(responseData => this.setState({badges: responseData}))
+  }
   render() {
     return (
       <Grid centered>

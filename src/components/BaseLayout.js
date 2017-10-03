@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Segment, Input, Button, Icon } from 'semantic-ui-react';
 import '../styles/style1.css';
-import logo from '../phone.png';
+import logo from '../images/logo.png';
 
 export default class BaseLayout extends React.Component {
   state = {}
