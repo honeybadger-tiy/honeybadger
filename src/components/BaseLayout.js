@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, Segment, Input, Button, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Button, Icon } from 'semantic-ui-react';
 import '../styles/style1.css';
 import logo from '../images/logo.png';
 
@@ -17,7 +17,7 @@ export default class BaseLayout extends React.Component {
 
           <img className="backgroundColor" src={logo}/>
 
-          <Menu.Item
+          <Menu.Item as={NavLink} exact to='/'
             name='e&j'
             active={activeItem === 'e&j'}
             onClick={this.handleItemClick}
@@ -25,7 +25,7 @@ export default class BaseLayout extends React.Component {
             E&J
           </Menu.Item>
 
-          <Menu.Item
+          <Menu.Item as={NavLink} to='/badges'
             name='badges'
             active={activeItem === 'badges'}
             onClick={this.handleItemClick}
@@ -33,7 +33,7 @@ export default class BaseLayout extends React.Component {
             Badges
           </Menu.Item>
 
-          <Menu.Item
+          <Menu.Item as={NavLink} to='/contact'
             name='contact'
             active={activeItem === 'contact'}
             onClick={this.handleItemClick}
@@ -41,7 +41,7 @@ export default class BaseLayout extends React.Component {
             Contact Us
           </Menu.Item>
           <Menu.Menu position='right'>
-          <Menu.Item >
+          <Menu.Item as={NavLink} to='/cart' >
           <Button animated='vertical'>
             <Button.Content hidden>Shop</Button.Content>
             <Button.Content visible>
@@ -55,7 +55,7 @@ export default class BaseLayout extends React.Component {
         {this.props.children}
 
         <Segment textAlign='right'>
-        This is a footer.
+          <span>Terms & Conditions</span><span>Copyright</span><span>Powered by HoneyBadger</span>
         </Segment>
       </div>
     )
