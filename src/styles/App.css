@@ -34,25 +34,29 @@
 
 .subTotalHolder{
   padding: 10px;
-  border: solid black 5px;
+  border: solid #292f36 2px;
   flex: 1;
   margin: 10px;
+  border-radius: 25px;
 
 }
 
 .cartPageHolder{
   display: flex;
+  margin: 20px 100px;
 }
 
 .itemHolder{
   margin: 10px;
   padding: 10px;
   flex: 2;
-  border: solid black 5px;
+  border: solid #292f36 2px;
+  border-radius: 25px;
 }
 
 .thankYouPage{
-  border: solid 5px black;
+  border: solid #292f36 2px;
+  border-radius: 25px;
   margin: 100px;
   padding: 30px;
 

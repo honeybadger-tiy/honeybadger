@@ -1,13 +1,21 @@
 import React,  { Component } from 'react';
 import '../styles/App.css';
-import { Button, Item, Image, Form, Checkbox} from 'semantic-ui-react';
+import { Button, Item, Image, Form, Checkbox, Grid, Segment} from 'semantic-ui-react';
+import Confirmation from './Confirmation';
 
 export default class Checkout extends Component{
 
   state={
     firstName: "",
-    lastName: ""
+    lastName: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: ""
   }
+
+  handle = field => e => this.setState({[field]: e.target.value})
 
   render(){
 
@@ -25,8 +33,8 @@ export default class Checkout extends Component{
       <Form>
     <h3>1. Shipping Address</h3>
     <Form.Group widths='equal'>
-      <Form.Input value={this.state.firstName} label='First Name' placeholder='First Name' />
-      <Form.Input label='Last Name' placeholder='Last Name' />
+      <Form.Input value={this.state.firstName} onChange={this.handle('firstName')} label='First Name' placeholder='First Name' />
+      <Form.Input value={this.state.lastName} onChange={this.handle('lastName')} label='Last Name' placeholder='Last Name' />
     </Form.Group>
     <Form.Field>
       <label>Address Line 1</label>
@@ -57,6 +65,14 @@ export default class Checkout extends Component{
       <label>Card Number</label>
       <input/>
     </Form.Field>
+    <Form.Field>
+      <label>Address Line 1</label>
+      <input placeholder='123 Park Ave.' />
+    </Form.Field>
+    <Form.Field>
+      <label>Address Line 2</label>
+      <input placeholder='Address' />
+    </Form.Field>
     <Form.Group widths='equal'>
       <Form.Input label='Expires' placeholder='Expires' />
       <Form.Input label='Security Code' placeholder='Security Code' />
@@ -68,8 +84,15 @@ export default class Checkout extends Component{
     </Form.Group>
 
     <h3>3. Review Items & Shipping</h3>
+    <Grid columns={2}>
+      <Grid.Column>
+        <Segment>Content</Segment>
+      </Grid.Column>
+      <Grid.Column>
+        <Segment>Content</Segment>
+      </Grid.Column>
 
-    filler text based on Input
+    </Grid>
 
     <br/>
     <Button type='submit'>Submit</Button>
@@ -85,7 +108,7 @@ export default class Checkout extends Component{
         <br/>
         item total
         <br/>
-        <Button>Checkout</Button>
+        <Button onClick={Confirmation}>Place Order</Button>
       </div>
 
     </div>
