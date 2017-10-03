@@ -2,6 +2,9 @@
   background-color: #e84855;
 }*/
 
+.ui.aligned.right.segment span {
+  margin: 10px;
+}
 .Menu{
   background-color: #e84855;
 }
