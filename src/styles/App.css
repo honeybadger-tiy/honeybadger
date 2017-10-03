@@ -32,6 +32,40 @@
   font-size: large;
 }
 
+.subTotalHolder{
+  padding: 10px;
+  border: solid black 5px;
+  flex: 1;
+  margin: 10px;
+
+}
+
+.cartPageHolder{
+  display: flex;
+}
+
+.itemHolder{
+  margin: 10px;
+  padding: 10px;
+  flex: 2;
+  border: solid black 5px;
+}
+
+.thankYouPage{
+  border: solid 5px black;
+  margin: 100px;
+  padding: 30px;
+
+}
+
+input{
+  border: black solid 2px;
+  margin: 10px;
+}
+
+
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
