@@ -11,28 +11,28 @@ class HomePage extends Component {
           <Header as='h1'>Welcome to E&J Badges</Header>
         </Grid.Row>
         <Grid.Row columns={1}>
-          <img src="http://via.placeholder.com/750x250" />
+          <img className="img-red" src="http://via.placeholder.com/750x250" />
         </Grid.Row>
         <Grid.Row className="featured" columns={1}>
           <Header as='h3'>Featured Badges</Header>
         </Grid.Row>
         <Grid.Row columns={4}>
           <Grid.Column>
-            <img src="http://via.placeholder.com/250" />
+            <img className="img-green" src="http://via.placeholder.com/250" />
             <p>Featured Badge 1</p>
           </Grid.Column>
           <Grid.Column>
-            <img src="http://via.placeholder.com/250" />
+            <img className="img-orange" src="http://via.placeholder.com/250" />
             <p>Featured Badge 2</p>
           </Grid.Column>
           <Grid.Column>
-            <img src="http://via.placeholder.com/250" />
+            <img className="img-yellow" src="http://via.placeholder.com/250" />
             <p>Featured Badge 3</p>
           </Grid.Column>
           <Grid.Column>
             <div className="contact">
               <Header as='h4'>Location</Header>
-              <img src="http://via.placeholder.com/200" />
+              <img className="img-blue" src="http://via.placeholder.com/200" />
               <p>Find Us Here!</p>
             </div>
           </Grid.Column>
