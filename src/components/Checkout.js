@@ -2,6 +2,7 @@ import React,  { Component } from 'react';
 import '../styles/App.css';
 import { Button, Item, Image, Form, Checkbox, Grid, Segment} from 'semantic-ui-react';
 import Confirmation from './Confirmation';
+import { Link } from 'react-router-dom';
 
 export default class Checkout extends Component{
 
@@ -19,9 +20,13 @@ export default class Checkout extends Component{
 
   render(){
 
+    const confirmationRunner = () => {
+      console.log('Placing Order!');
+    };
+
     const sameAsShipping = () => {
         console.log("check box was checked")
-    }
+    };
 
 
     return(
@@ -38,11 +43,11 @@ export default class Checkout extends Component{
     </Form.Group>
     <Form.Field>
       <label>Address Line 1</label>
-      <input placeholder='123 Park Ave.' />
+      <input value={this.state.address1} onChange={this.handle('address1')} placeholder='123 Park Ave.' />
     </Form.Field>
     <Form.Field>
       <label>Address Line 2</label>
-      <input placeholder='Address' />
+      <input value={this.state.address2} onChange={this.handle('address2')} placeholder='suite 555' />
     </Form.Field>
 
     <Form.Group widths='equal'>
@@ -108,7 +113,7 @@ export default class Checkout extends Component{
         <br/>
         item total
         <br/>
-        <Button onClick={Confirmation}>Place Order</Button>
+        <Button as={Link} to='/confirmation' onClick={confirmationRunner}>Place Order</Button>
       </div>
 
     </div>

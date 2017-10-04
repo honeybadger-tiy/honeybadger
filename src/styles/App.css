@@ -67,6 +67,24 @@ input{
   margin: 10px;
 }
 
+.road{
+  display: flex;
+  background-image: url("../images/road.jpg");
+  background-size: cover;
+  flex-grow: 1;
+  padding: 160px 10px;
+  /*width: 20%;*/
+}
+
+.text-wrapper{
+  background-color: #1a2b24;
+  opacity: .7; 
+  margin-left: 50px;
+  padding: 20px 20px;
+  color: white;
+  font-size: 40px;
+
+}
 
 
 
