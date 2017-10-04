@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
 import { Header, Grid } from 'semantic-ui-react';
-import landingImage from '../images/landing.jpeg';
+import Road from '../images/road.jpg';
 
 class HomePage extends Component {
   render() {
@@ -12,7 +12,12 @@ class HomePage extends Component {
           <Header as='h1'>Welcome to E&J Badges</Header>
         </Grid.Row>
         <Grid.Row columns={1}>
-          <img className="img-red" src={landingImage} alt='landing' />
+
+        <div className="road">
+        <div className="text-wrapper">
+        <span>Badges for wherever the road takes you </span>
+        </div>
+        </div>
         </Grid.Row>
         <Grid.Row className="featured" columns={1}>
           <Header as='h3'>Featured Badges</Header>
