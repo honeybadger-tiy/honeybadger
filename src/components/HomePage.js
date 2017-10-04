@@ -12,6 +12,7 @@ class HomePage extends Component {
           <Header as='h1'>Welcome to E&J Badges</Header>
         </Grid.Row>
         <Grid.Row columns={1}>
+
         <div className="road">
         <div className="text-wrapper">
         <span>Badges for wherever the road takes you </span>
