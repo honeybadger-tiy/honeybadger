@@ -14,7 +14,7 @@ export default class BadgesPage extends React.Component {
   render() {
     return (
       <Grid centered>
-        <Grid.Row>
+        <Grid.Row verticalAlign='middle'>
           <Form.Field label='Filter By:' control='select'>
             <option value='category'>Category</option>
             <option value='color'>Color</option>
