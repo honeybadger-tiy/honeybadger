@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+
 import '../styles/App.css';
 import { Header, Grid } from 'semantic-ui-react';
-import Road from '../images/road.jpg';
+
 
 class HomePage extends Component {
   render() {
@@ -12,33 +12,32 @@ class HomePage extends Component {
           <Header as='h1'>Welcome to E&J Badges</Header>
         </Grid.Row>
         <Grid.Row columns={1}>
-
-        <div className="road">
-        <div className="text-wrapper">
-        <span>Badges for wherever the road takes you </span>
-        </div>
-        </div>
+          <div className="road">
+            <div className="text-wrapper">
+              <span>Badges for wherever the road takes you </span>
+            </div>
+          </div>
         </Grid.Row>
         <Grid.Row className="featured" columns={1}>
           <Header as='h3'>Featured Badges</Header>
         </Grid.Row>
         <Grid.Row columns={4}>
           <Grid.Column>
-            <img className="img-green" src="http://via.placeholder.com/250" />
+            <img className="img-green" alt='' src="http://via.placeholder.com/250" />
             <p>Featured Badge 1</p>
           </Grid.Column>
           <Grid.Column>
-            <img className="img-orange" src="http://via.placeholder.com/250" />
+            <img className="img-orange" alt='' src="http://via.placeholder.com/250" />
             <p>Featured Badge 2</p>
           </Grid.Column>
           <Grid.Column>
-            <img className="img-yellow" src="http://via.placeholder.com/250" />
+            <img className="img-yellow" alt='' src="http://via.placeholder.com/250" />
             <p>Featured Badge 3</p>
           </Grid.Column>
           <Grid.Column>
             <div className="contact">
               <Header as='h4'>Location</Header>
-              <img className="img-blue" src="http://via.placeholder.com/200" />
+              <img className="img-blue" alt='' src="http://via.placeholder.com/200" />
               <p>Find Us Here!</p>
             </div>
           </Grid.Column>
