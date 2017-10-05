@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.a5e468ce.css",
-  "main.css.map": "static/css/main.a5e468ce.css.map",
-  "main.js": "static/js/main.20910668.js",
-  "main.js.map": "static/js/main.20910668.js.map",
+  "main.css": "static/css/main.529cc2b2.css",
+  "main.css.map": "static/css/main.529cc2b2.css.map",
+  "main.js": "static/js/main.ea7df3b2.js",
+  "main.js.map": "static/js/main.ea7df3b2.js.map",
   "static/media/flags.png": "static/media/flags.9c74e172.png",
   "static/media/icons.eot": "static/media/icons.674f50d2.eot",
   "static/media/icons.svg": "static/media/icons.912ec66d.svg",
@@ -10,7 +10,7 @@
   "static/media/icons.woff": "static/media/icons.fee66e71.woff",
   "static/media/icons.woff2": "static/media/icons.af7ae505.woff2",
   "static/media/igp4.png": "static/media/igp4.bcfb6ec9.png",
+  "static/media/kiosk.jpg": "static/media/kiosk.ec553880.jpg",
   "static/media/logo.png": "static/media/logo.81a8a0fa.png",
-  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg",
   "static/media/road.jpg": "static/media/road.221c3550.jpg"
 }
