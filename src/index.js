@@ -8,6 +8,7 @@ import BaseLayout from './components/BaseLayout';
 import BadgesPage from './components/BadgesPage';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart';
+import Contact from './components/Contact';
 import Checkout from './components/Checkout';
 import Confirmation from './components/Confirmation';
 import {baseName} from './config';
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/badges' component={BadgesPage} />
+        <Route path='/contact' component={Contact} />
         <Route path='/cart' component={Cart} />
         <Route path='/checkout' component={Checkout} />
         <Route path='/confirmation' component={Confirmation} />
