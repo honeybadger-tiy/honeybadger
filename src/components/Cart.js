@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import { Input, Button, Item, Image, Group, Content, Meta, Description, Menu, Dropdown } from 'semantic-ui-react';
+import { Button, Item, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Picture from '../images/igp4.png';
 

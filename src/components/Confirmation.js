@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import { Input, Button} from 'semantic-ui-react';
+
 
 export default class Confirmation extends Component{
   render(){

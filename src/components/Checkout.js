@@ -1,7 +1,6 @@
 import React,  { Component } from 'react';
 import '../styles/App.css';
-import { Button, Item, Image, Form, Checkbox, Grid, Segment} from 'semantic-ui-react';
-import Confirmation from './Confirmation';
+import { Button, Form, Checkbox, Grid, Segment} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default class Checkout extends Component{
@@ -13,8 +12,15 @@ export default class Checkout extends Component{
     address2: "",
     city: "",
     state: "",
-    zip: ""
+    zip: "",
+    email: "",
+    Paddress1: "",
+    Paddress2: "",
+    Pcity: "",
+    Pzip: "",
+    Pstate: ""
   }
+
 
   handle = field => e => this.setState({[field]: e.target.value})
 
@@ -25,7 +31,12 @@ export default class Checkout extends Component{
     };
 
     const sameAsShipping = () => {
-        console.log("check box was checked")
+        console.log("Payment Address Same as Shipping Address")
+        this.setState({Paddress1: this.state.address1})
+        this.setState({Paddress2: this.state.address2})
+        this.setState({Pcity: this.state.city})
+        this.setState({Pstate: this.state.state})
+        this.setState({Pzip: this.state.zip})
     };
 
 
@@ -51,9 +62,9 @@ export default class Checkout extends Component{
     </Form.Field>
 
     <Form.Group widths='equal'>
-      <Form.Input label='City' placeholder='City' />
-      <Form.Input label='State' placeholder='State' />
-      <Form.Input label='Zip Code' placeholder='Zip Code' />
+      <Form.Input value={this.state.city} onChange={this.handle('city')} label='City' placeholder='City' />
+      <Form.Input value={this.state.state} onChange={this.handle('state')} label='State' placeholder='State' />
+      <Form.Input value={this.state.zip} onChange={this.handle('zip')} label='Zip Code' placeholder='Zip Code' />
     </Form.Group>
     <Form.Field>
       <Checkbox label='I agree to the Terms and Conditions' />
@@ -62,30 +73,29 @@ export default class Checkout extends Component{
     <Form.Field>
       <Checkbox toggle onClick={sameAsShipping} label='Billing same as Shipping' />
     </Form.Field>
-    <Form.Group widths='equal'>
-      <Form.Input label='First Name' placeholder='First Name' />
-      <Form.Input label='Last Name' placeholder='Last Name' />
-    </Form.Group>
+    <Form.Field >
+      <Form.Input value={this.state.email} onChange={this.handle('email')} label='E-mail' placeholder='bill@gmail.com' />
+    </Form.Field>
     <Form.Field>
       <label>Card Number</label>
       <input/>
-    </Form.Field>
-    <Form.Field>
-      <label>Address Line 1</label>
-      <input placeholder='123 Park Ave.' />
-    </Form.Field>
-    <Form.Field>
-      <label>Address Line 2</label>
-      <input placeholder='Address' />
     </Form.Field>
     <Form.Group widths='equal'>
       <Form.Input label='Expires' placeholder='Expires' />
       <Form.Input label='Security Code' placeholder='Security Code' />
     </Form.Group>
+    <Form.Field>
+      <label>Address Line 1</label>
+      <input value={this.state.Paddress1} onChange={this.handle('Paddress1')} placeholder='123 Park Ave.' />
+    </Form.Field>
+    <Form.Field>
+      <label>Address Line 2</label>
+      <input value={this.state.Paddress2} onChange={this.handle('Paddress2')} placeholder='Address' />
+    </Form.Field>
     <Form.Group widths='equal'>
-      <Form.Input label='City' placeholder='City' />
-      <Form.Input label='State' placeholder='State' />
-      <Form.Input label='Zip Code' placeholder='Zip Code' />
+      <Form.Input value={this.state.Pcity} onChange={this.handle('Pcity')} label='City' placeholder='City' />
+      <Form.Input value={this.state.Pstate} onChange={this.handle('Pstate')} label='State' placeholder='State' />
+      <Form.Input value={this.state.Pzip} onChange={this.handle('Pzip')} label='Zip Code' placeholder='Zip Code' />
     </Form.Group>
 
     <h3>3. Review Items & Shipping</h3>
@@ -101,6 +111,8 @@ export default class Checkout extends Component{
 
     <br/>
     <Button type='submit'>Submit</Button>
+
+
   </Form>
 
 
