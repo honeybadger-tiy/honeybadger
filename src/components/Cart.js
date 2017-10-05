@@ -3,10 +3,23 @@ import '../styles/App.css';
 import { Button, Item, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Picture from '../images/igp4.png';
+import { cart } from '../data/data';
 
 
 
 export default class Cart extends Component{
+
+  state = {
+    cart: []
+  }
+
+  componentDidMount() {
+    fetch("https://murmuring-scrubland-72784.herokuapp.com/badges/all")
+    .then(response => response.json())
+    .then(responseData => this.setState({cart: responseData}))
+  }
+
+
   render(){
 
     // let cartItems = {};
@@ -25,60 +38,40 @@ export default class Cart extends Component{
       <div className="cartPageHolder">
 
 
-      <div className="itemHolder">
-      <Item.Group>
-        <Item>
-          <Item.Image size='tiny' src={Picture} />
+  <div className="itemHolder">
 
-          <Item.Content>
-            <Item.Header as='a'>Header</Item.Header>
-            <Item.Meta>Description</Item.Meta>
-            <Item.Description>
-              <Image src='/assets/images/wireframe/short-paragraph.png' />
-            </Item.Description>
-            <Item.Extra>Additional Details</Item.Extra>
-            <select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-          </Item.Content>
-        </Item>
-      </Item.Group>
+    <Item.Group>
 
-      <Item.Group>
-        <Item>
-          <Item.Image size='tiny' src={Picture} />
+      {cart.map((item, i) => {
+        return <Item> <div key={i}>
 
-          <Item.Content>
-            <Item.Header as='a'>Header</Item.Header>
-            <Item.Meta>Description</Item.Meta>
-            <Item.Description>
-              <Image src='/assets/images/wireframe/short-paragraph.png' />
-            </Item.Description>
-            <Item.Extra>Additional Details</Item.Extra>
-            <select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-          </Item.Content>
-        </Item>
-      </Item.Group>
+            <img width="100px" height="100px" src={item.image_path} alt={item.description} />
+            <div>
+            <Item.Content>
+              <Item.Header as='a'>Title: {item.product}</Item.Header>
+              <Item.Meta>Description: {item.description}</Item.Meta>
+              <div>Price: {item.price}</div>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+              </Item.Content>
+            </div>
 
-        </div>
+          </div>
+          </Item>
+        })}
+    </Item.Group>
+
+  </div>
+
 
 
     <div className="subTotalHolder">

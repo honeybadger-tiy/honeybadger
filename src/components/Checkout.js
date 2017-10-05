@@ -18,7 +18,16 @@ export default class Checkout extends Component{
     Paddress2: "",
     Pcity: "",
     Pzip: "",
-    Pstate: ""
+    Pstate: "",
+    cc: "",
+    cart: []
+  }
+
+
+  componentDidMount() {
+    fetch("https://murmuring-scrubland-72784.herokuapp.com/badges/all")
+    .then(response => response.json())
+    .then(responseData => this.setState({cart: responseData}))
   }
 
 
@@ -78,7 +87,7 @@ export default class Checkout extends Component{
     </Form.Field>
     <Form.Field>
       <label>Card Number</label>
-      <input/>
+      <Form.Input value={this.state.cc} onChange={this.handle('cc')} label='Credit Card' placeholder='bill@gmail.com' />
     </Form.Field>
     <Form.Group widths='equal'>
       <Form.Input label='Expires' placeholder='Expires' />
