@@ -14,30 +14,22 @@ export default class BaseLayout extends React.Component {
     return (
       <div>
         <Menu>
-
-          <img className="backgroundColor" src={logo}/>
-
+          <img className="backgroundColor" alt='' src={logo}/>
           <Menu.Item as={NavLink} exact to='/'
             name='e&j'
             active={activeItem === 'e&j'}
-            onClick={this.handleItemClick}
-          >
+            onClick={this.handleItemClick}>
             E&J
           </Menu.Item>
 
           <Menu.Item as={NavLink} to='/badges'
             name='badges'
             active={activeItem === 'badges'}
-            onClick={this.handleItemClick}
-          >
+            onClick={this.handleItemClick}>
             Badges
           </Menu.Item>
 
-          <Menu.Item as={NavLink} to='/contact'
-            name='contact'
-            active={activeItem === 'contact'}
-            onClick={this.handleItemClick}
-          >
+          <Menu.Item as={NavLink} to='/contact' name='contact' active={activeItem === 'contact'} onClick={this.handleItemClick}>
             Contact Us
           </Menu.Item>
           <Menu.Menu position='right'>
@@ -51,9 +43,7 @@ export default class BaseLayout extends React.Component {
             </Menu.Item>
         </Menu.Menu>
         </Menu>
-
         {this.props.children}
-
         <Segment textAlign='right'>
           <span>Terms & Conditions</span><span>Copyright</span><span>Powered by HoneyBadger</span>
         </Segment>

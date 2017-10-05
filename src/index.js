@@ -10,9 +10,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Confirmation from './components/Confirmation';
+import {baseName} from './config';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={baseName}>
     <BaseLayout>
       <Switch>
         <Route exact path='/' component={HomePage} />
