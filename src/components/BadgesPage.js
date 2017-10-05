@@ -5,7 +5,7 @@ import '../styles/badges.css';
 export default class BadgesPage extends React.Component {
   state = {
     badges: [],
-    cart: []
+    cart_item: {}
   }
 
   componentDidMount() {
@@ -14,8 +14,8 @@ export default class BadgesPage extends React.Component {
     .then(responseData => this.setState({badges: responseData}))
   }
 
-  handleCartAdd = id => () => (
-    this.setState({cart: [...this.state.cart, id]})
+  handleCartAdd = (id, price) => () => (
+    this.setState({cart_item: {id:id, price:price, quantity: 1}})
     // This is for when the cart api endpoint is ready
     // const myOptions = {
     //   method: 'POST',
@@ -52,7 +52,7 @@ export default class BadgesPage extends React.Component {
                 <Card.Description>Description: {badge.description}</Card.Description>
               </Card.Content>
               <Card.Content extra>Price: {badge.price}</Card.Content>
-              <Popup trigger={<Button onClick={this.handleCartAdd(badge.id)} icon='add' />} content='Add to Cart?' />
+              <Popup trigger={<Button onClick={this.handleCartAdd(badge.id, badge.price)} icon='add' />} content='Add to Cart?' />
             </Card>
           ))}
 

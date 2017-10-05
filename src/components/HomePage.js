@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import kiosk from '../images/kiosk.jpg';
-
 import '../styles/App.css';
 import { Header, Grid, Card, Image } from 'semantic-ui-react';
 
-const GOOGLE_API_KEY = 'AIzaSyB1MCzzxgHHUOwazCAJc6PUKBZw_qgYeus';
 class HomePage extends Component {
   state = {
     featured: []
