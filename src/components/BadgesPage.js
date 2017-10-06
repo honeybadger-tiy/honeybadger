@@ -5,7 +5,8 @@ import '../styles/badges.css';
 export default class BadgesPage extends React.Component {
   state = {
     badges: [],
-    cart_item: {}
+    cart_item: {},
+    category: ''
   }
 
   componentDidMount() {
@@ -14,36 +15,39 @@ export default class BadgesPage extends React.Component {
     .then(responseData => this.setState({badges: responseData}))
   }
 
-  handleCartAdd = (id, price) => () => (
-    this.setState({cart_item: {id:id, price:price, quantity: 1}})
-    // This is for when the cart api endpoint is ready
-    // const myOptions = {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   header: new Headers()
-    // }
-    // fetch(url, myOptions)
-    // .then(response => response.json())
-    // .then(() => console.log('You added to cart'))
+  handleCartAdd = (id, price) => () => {
+    const body = new FormData();
+    body.append('badge_id', id);
+    body.append('unit_price', price);
+    body.append('quantity', 1);
+    return fetch('https://murmuring-scrubland-72784.herokuapp.com/badges/add', {
+      method: 'POST',
+      mode: 'cors',
+      body
+    })
+    .then(response => response.json())
+    .then(() => console.log('You added to cart'))
+  }
+
+  handleFilter = e => (
+    this.setState({category: e.target.value})
   )
 
   render() {
     return (
       <Grid centered>
         <Grid.Row verticalAlign='middle'>
-          <Form.Field label='Filter By:' control='select'>
-            <option value='category'>Category</option>
-            <option value='color'>Color</option>
-            <option value='price'>Price</option>
+          <Form.Field onChange={this.handleFilter} label='Filter By:' control='select'>
+            <option hidden placeholder=''></option>
+            <option value='Music'>Music</option>
+            <option value='Bands'>Bands</option>
+            <option value='Farming'>Farming</option>
+            <option value='National Parks'>National Parks</option>
+            <option value='Movies'>Movies</option>
           </Form.Field>
-          <Form.Field label='Specific Filter:' control='select'>
-            <option value='music'>Music</option>
-            <option value='bands'>Bands</option>
-          </Form.Field>
-          <Button>Filter</Button>
         </Grid.Row>
         <Grid.Row>
-          {this.state.badges.map(badge => (
+          {this.state.badges.filter(badge => (this.state.category === '' ? true : badge.category === this.state.category)).map(badge => (
             <Card key={badge.id} className='badge'>
               <Image width='100%' src={badge.image_path} alt='placeholder' />
               <Card.Content>
