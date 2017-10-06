@@ -128,11 +128,13 @@ export default class Checkout extends Component{
         </div>
 
     <div className="subTotalHolder">
-    <h3>Subtotal</h3>
+    <h3>Grand Total</h3>
       <div>
         number of items
         <br/>
         item total
+        <br/>
+        Shipping Cost $5.00
         <br/>
         <Button as={Link} to='/confirmation' onClick={confirmationRunner}>Place Order</Button>
       </div>
