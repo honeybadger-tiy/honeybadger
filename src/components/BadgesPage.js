@@ -14,18 +14,19 @@ export default class BadgesPage extends React.Component {
     .then(responseData => this.setState({badges: responseData}))
   }
 
-  handleCartAdd = (id, price) => () => (
-    this.setState({cart_item: {id:id, price:price, quantity: 1}})
-    // This is for when the cart api endpoint is ready
-    // const myOptions = {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   header: new Headers()
-    // }
-    // fetch(url, myOptions)
-    // .then(response => response.json())
-    // .then(() => console.log('You added to cart'))
-  )
+  handleCartAdd = (id, price) => () => {
+    const body = new FormData();
+    body.append('badge_id', id);
+    body.append('unit_price', price);
+    body.append('quantity', 1);
+    return fetch('https://murmuring-scrubland-72784.herokuapp.com/badges/add', {
+      method: 'POST',
+      mode: 'cors',
+      body
+    })
+    .then(response => response.json())
+    .then(() => console.log('You added to cart'))
+  }
 
   render() {
     return (
